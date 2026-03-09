@@ -39,7 +39,6 @@ def list_disks():
 @app.post("/disks/{disk_name}", response_model = ResponseDisk)
 def create_disk(disk_name: str, disk: CreateDisk):
     if disk_name in disks_db:
-        #идемпотентность 
         return disks_db[disk_name]
     
     if disk.fs_type not in SUPPORTED_FS:
