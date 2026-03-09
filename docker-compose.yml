@@ -1,0 +1,9 @@
+services:
+  cloud-provider:
+    image: cloud-provider
+    build: .
+    privileged: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./disks_images:/cloud/disks_images
